@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // fetch() es el método nativo de los navegadores para hacer peticiones AJAX
 // se usa con promesas ya que es asíncrono
 function fetchData() {
-  fetch('https://hello-database-dimuro.herokuapp.com/api/users/')
+  fetch('https://hello-database-dimuro.herokuapp.com/api/users')
     .then(res => res.json())
     .then(users => {
       populateTable(users);
@@ -45,7 +45,7 @@ function fetchUser() {
   let id = document.getElementById('userID').value;
   // si el id no es un numero terminamos
   if (isNaN(id)) return;
-  fetch(`https://hello-database-dimuro.herokuapp.com/api/user/${id}/`)
+  fetch(`https://hello-database-dimuro.herokuapp.com/api/user/${id}`)
     .then(res => res.json())
     .then(user => {
       let users = [user];  // populateTable usa un array de objetos como argumento
