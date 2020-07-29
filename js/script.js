@@ -1,18 +1,19 @@
 // cuando termine de cargar el documento poblamos la tabla
 document.addEventListener("DOMContentLoaded", function() {
   fetchData();
+  header()
 });
 
 // esta funcion carga la tabla apenas carga la pagina
 // fetch() es el método nativo de los navegadores para hacer peticiones AJAX
 // se usa con promesas ya que es asíncrono
 function fetchData() {
-  fetch('https://hello-database-dimuro.herokuapp.com/api/users')
+  fetch('https://hello-database-dimuro.herokuapp.com/api/users/')
     .then(res => res.json())
     .then(users => {
       populateTable(users);
     });
-}
+
 
 // esta funcion carga los usuarios en la tabla
 // crea una fila en la tabla por cada elemento en el array users
@@ -45,7 +46,7 @@ function fetchUser() {
   let id = document.getElementById('userID').value;
   // si el id no es un numero terminamos
   if (isNaN(id)) return;
-  fetch(`https://hello-database-dimuro.herokuapp.com/api/user/${id}`)
+  fetch(`https://hello-database-dimuro.herokuapp.com/api/user/${id}/`)
     .then(res => res.json())
     .then(user => {
       let users = [user];  // populateTable usa un array de objetos como argumento
