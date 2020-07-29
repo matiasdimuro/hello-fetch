@@ -12,7 +12,7 @@ function fetchData() {
     .then(users => {
       populateTable(users);
     });
-
+}
 
 // esta funcion carga los usuarios en la tabla
 // crea una fila en la tabla por cada elemento en el array users
