@@ -1,7 +1,6 @@
 // cuando termine de cargar el documento poblamos la tabla
 document.addEventListener("DOMContentLoaded", function() {
   fetchData();
-  header()
 });
 
 // esta funcion carga la tabla apenas carga la pagina
